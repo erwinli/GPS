@@ -43,7 +43,7 @@ public class MainActivity extends Activity implements GoogleApiClient.Connection
 
     @Override
     public void onLocationChanged(Location location) {
-        mLocationView.setText("Location received: " + location.toString() + location.);
+        mLocationView.setText("Location received: " + location.toString());
         String locationTxt = "Latitude = " + Double.toString(location.getLatitude()) + ",Longitude = " + Double.toString(location.getLongitude());
         Log.i(TAG, locationTxt);
     }
@@ -97,7 +97,7 @@ public class MainActivity extends Activity implements GoogleApiClient.Connection
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mLocationView = new TextView(this);
-        setContentView(mLocationView);
+        setContentView(R.layout.activity_main);
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addApi(LocationServices.API)
                 .addConnectionCallbacks(this)
